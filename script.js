@@ -1,4 +1,6 @@
 var fs = require("fs");
+var fs = require("fs");
+
 
 fs.readFile("mbox_example", "utf8", function (error, data) {
   if (error) {
@@ -7,7 +9,7 @@ fs.readFile("mbox_example", "utf8", function (error, data) {
   ///============code to split the emails data by lines ===//
   var dataArr = data.split("\n");
   //  var dataArr2 = data.split("From ")
-  console.log("first line of the file " + dataArr[0]);
+ // console.log("first line of the file " + dataArr[0]);
   var from_line = [];
 
   //=== this code will check for the start of a new email and store the index in an arra. 
@@ -47,6 +49,10 @@ fs.readFile("mbox_example", "utf8", function (error, data) {
   //console.log("data for email array")
   //console.log(email.length); // number of emails we have
   //console.log(email[0]);  // each entry is another array with the data seperated by lines
+ 
+ 
+ // this line will create a new empty file
+  fs.openSync("mbox_reverse.txt", 'w');
 
  // ==== code to split each email into 3 arrays the middle will be reversed and then they will be put back together
  var emailArr=[];
@@ -63,7 +69,22 @@ fs.readFile("mbox_example", "utf8", function (error, data) {
    // console.log(emailArr_footer);
     let email_reverse = emailArr_message.reverse();
     let new_email = emailArr_header.concat(email_reverse.concat(emailArr_footer));
-    console.log(new_email)
-  }  
+    console.log(new_email);
+    let text = new_email.join('\n');
+
+// try this code to write text..
+    fs.appendFile('mbox_reverse.txt', text, function (err) {
+  if (err) {
+    // append failed
+  } else {
+    // done
+  }
+})
+   // fs.writeFile('mbox_reverse.txt', text, 'utf8', callback);
+    }  
  
 })
+
+//console.log(elements.join('\n'));
+
+//fs.writeFile('message.txt', 'Hello Node.js', 'utf8', callback);
