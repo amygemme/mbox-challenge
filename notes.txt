@@ -1,0 +1,17 @@
+The index #s for the original email example
+
+0 From Line
+1-6  Header
+7 Blank
+8-20  Message
+21-22 Footer
+23 Blank
+
+24 From Line    --> 0
+25-27 Header    --> 1-3
+28 Blank        --> 4
+29-60 Message   --> 5-36
+61-62 Footer    --> 37-38
+63 Blank        --> 39
+
+64 Will be the next from line

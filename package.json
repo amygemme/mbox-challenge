@@ -1,0 +1,22 @@
+{
+  "name": "mbox-challenge",
+  "version": "1.0.0",
+  "description": "the challenge is to write code that will reverse the message of an email.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amygemme81/mbox-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amygemme81/mbox-challenge/issues"
+  },
+  "homepage": "https://github.com/amygemme81/mbox-challenge#readme",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
